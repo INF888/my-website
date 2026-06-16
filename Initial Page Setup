@@ -13,6 +13,12 @@
       background-color: #f5f5f5;
       color: #333;
     }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
     h1 {
       color: #1a1a1a;
     }
@@ -28,6 +34,9 @@
   </style>
 </head>
 <body>
+
+  <img src="Duck-ai-image-2026-06-16-19-22.jpeg" alt="Infinite888 Solutions">
+
   <h1>Welcome to Infinite888 Solutions</h1>
   <p>We provide business solutions that help you grow.</p>
   
@@ -39,8 +48,9 @@
   </ul>
   
   <h2>Contact Us</h2>
-  <p>Email: hello@infinite888solutions.com</p>
+  <p>Email: infinite888solutions@gmail.com</p>
   
-  <a href="mailto:hello@infinite888solutions.com" class="button">Get in Touch</a>
+  <a href="mailto:infinite888solutions@gmail.com" class="button">Get in Touch</a>
+
 </body>
 </html>
