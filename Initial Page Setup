@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infinite888 Solutions</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    h1 {
+      color: #1a1a1a;
+    }
+    .button {
+      display: inline-block;
+      background-color: #0066cc;
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to Infinite888 Solutions</h1>
+  <p>We provide business solutions that help you grow.</p>
+  
+  <h2>Our Services</h2>
+  <ul>
+    <li>Consulting</li>
+    <li>Digital Strategy</li>
+    <li>Business Development</li>
+  </ul>
+  
+  <h2>Contact Us</h2>
+  <p>Email: hello@infinite888solutions.com</p>
+  
+  <a href="mailto:hello@infinite888solutions.com" class="button">Get in Touch</a>
+</body>
+</html>
