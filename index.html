@@ -5,44 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Infinite Solutions</title>
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px;
       background-color: #f5f5f5;  /* CHANGE THIS: Page background color */
       color: #333333;             /* CHANGE THIS: Main text color */
       line-height: 1.6;
     }
-    img.logo {
-      max-width: 300px;           /* CHANGE THIS: Image width (try 200px, 400px, etc.) */
+
+    .hero {
+      width: 100%;
+      line-height: 0;
+    }
+
+    .hero img {
       width: 100%;
       height: auto;
       display: block;
-      margin: 0 auto 30px auto;
-      border-radius: 12px;
+      object-fit: cover;
     }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
     h1 {
       text-align: center;
       color: #1a1a1a;             /* CHANGE THIS: Headline color */
     }
+
     h2 {
       color: #0066cc;             /* CHANGE THIS: Section title color */
       border-bottom: 2px solid #e0e0e0;
       padding-bottom: 8px;
       margin-top: 40px;
     }
+
     h3 {
       color: #444444;
       margin-top: 25px;
       margin-bottom: 5px;
     }
+
     ul {
       margin-top: 5px;
     }
+
     li {
       margin-bottom: 6px;
     }
+
     .button {
       display: inline-block;
       background-color: #0066cc;  /* CHANGE THIS: Button color */
@@ -52,9 +71,11 @@
       border-radius: 6px;
       font-weight: bold;
     }
+
     .button:hover {
       background-color: #004499;  /* CHANGE THIS: Button hover color */
     }
+
     .contact-box {
       background-color: #ffffff;  /* CHANGE THIS: Contact box background */
       padding: 20px;
@@ -65,39 +86,45 @@
 </head>
 <body>
 
-  <img src="Duck-ai-image-2026-06-16-19-22.jpeg" alt="Infinite Solutions" class="logo">
+  <header class="hero">
+    <img src="Duck-ai-image-2026-06-16-19-22.jpeg" alt="Infinite Solutions">
+  </header>
 
-  <h1>Infinite Solutions</h1>
+  <div class="container">
 
-  <h2>About Us</h2>
-  <p>At Infinite Solutions, we strive to help individuals, teams or entire organizations achieve the next phase of your growth journey. We want to help you realize your next steps of potential, establish solid approaches to roadblocks and move towards your next big thing!</p>
+    <h1>Infinite Solutions</h1>
 
-  <h2>Our Services</h2>
+    <h2>About Us</h2>
+    <p>At Infinite Solutions, we strive to help individuals, teams or entire organizations achieve the next phase of your growth journey. We want to help you realize your next steps of potential, establish solid approaches to roadblocks and move towards your next big thing!</p>
 
-  <h3>1) Project Management Training/Services</h3>
-  <ul>
-    <li>Have a large project that you could use help setting up?</li>
-    <li>Are you trying to train up a new project manager and looking for support or approach ideas?</li>
-  </ul>
+    <h2>Our Services</h2>
 
-  <h3>2) Employee Growth Opportunities</h3>
-  <ul>
-    <li>Looking at how to develop and guide leaders within your organization?</li>
-    <li>Need some ideas of how to establish outcomes and not just assign tasks to your leaders?</li>
-  </ul>
+    <h3>1) Project Management Training/Services</h3>
+    <ul>
+      <li>Have a large project that you could use help setting up?</li>
+      <li>Are you trying to train up a new project manager and looking for support or approach ideas?</li>
+    </ul>
 
-  <h3>3) Hiring/Interviewing Assistance</h3>
-  <ul>
-    <li>Looking to hire some leaders/directors to a role and not sure where to start?</li>
-    <li>Do you know the needs you have, but not sure how to interview candidates that really fit the mold of what you are looking for?</li>
-  </ul>
+    <h3>2) Employee Growth Opportunities</h3>
+    <ul>
+      <li>Looking at how to develop and guide leaders within your organization?</li>
+      <li>Need some ideas of how to establish outcomes and not just assign tasks to your leaders?</li>
+    </ul>
 
-  <p>All of these things are important aspects to running and growing your business, and we can help!</p>
+    <h3>3) Hiring/Interviewing Assistance</h3>
+    <ul>
+      <li>Looking to hire some leaders/directors to a role and not sure where to start?</li>
+      <li>Do you know the needs you have, but not sure how to interview candidates that really fit the mold of what you are looking for?</li>
+    </ul>
 
-  <h2>Contact Us</h2>
-  <div class="contact-box">
-    <p>Email: infinite888solutions@gmail.com</p>
-    <a href="mailto:infinite888solutions@gmail.com" class="button">Get in Touch</a>
+    <p>All of these things are important aspects to running and growing your business, and we can help!</p>
+
+    <h2>Contact Us</h2>
+    <div class="contact-box">
+      <p>Email: infinite888solutions@gmail.com</p>
+      <a href="mailto:infinite888solutions@gmail.com" class="button">Get in Touch</a>
+    </div>
+
   </div>
 
 </body>
