@@ -5,206 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Infinite Solutions</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      color: #333333;
-      line-height: 1.6;
-    }
-
-    /* Navigation Bar */
-    nav {
-      background-color: #0066cc;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      width: 100%;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    nav li {
-      position: relative;
-    }
-
-    nav a {
-      display: block;
-      color: white;
-      text-decoration: none;
-      padding: 16px 24px;
-      font-weight: bold;
-      transition: background-color 0.2s;
-    }
-
-    nav a:hover {
-      background-color: #004499;
-    }
-
-    /* Dropdown Menu */
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #ffffff;
-      min-width: 220px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-      border-radius: 0 0 6px 6px;
-      overflow: hidden;
-      z-index: 1001;
-    }
-
-    .dropdown-content a {
-      color: #333333;
-      padding: 12px 20px;
-      font-weight: normal;
-      border-bottom: 1px solid #f0f0f0;
-    }
-
-    .dropdown-content a:hover {
-      background-color: #f5f5f5;
-      color: #0066cc;
-    }
-
-    /* Desktop hover */
-    li:hover .dropdown-content,
-    li:focus-within .dropdown-content {
-      display: block;
-    }
-
-    /* Mobile Menu Toggle */
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 24px;
-      padding: 14px 20px;
-      cursor: pointer;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background-color: #f5f5f5; color: #333333; line-height: 1.6; }
+    nav { background-color: #0066cc; position: sticky; top: 0; z-index: 1000; width: 100%; }
+    nav ul { list-style: none; display: flex; justify-content: center; max-width: 900px; margin: 0 auto; padding: 0 20px; }
+    nav li { position: relative; }
+    nav a { display: block; color: white; text-decoration: none; padding: 16px 24px; font-weight: bold; transition: background-color 0.2s; }
+    nav a:hover { background-color: #004499; }
+    .dropdown-content { display: none; position: absolute; background-color: #ffffff; min-width: 220px; box-shadow: 0 8px 16px rgba(0,0,0,0.15); border-radius: 0 0 6px 6px; overflow: hidden; z-index: 1001; }
+    .dropdown-content a { color: #333333; padding: 12px 20px; font-weight: normal; border-bottom: 1px solid #f0f0f0; }
+    .dropdown-content a:hover { background-color: #f5f5f5; color: #0066cc; }
+    li:hover .dropdown-content, li:focus-within .dropdown-content { display: block; }
+    .menu-toggle { display: none; background: none; border: none; color: white; font-size: 24px; padding: 14px 20px; cursor: pointer; }
     @media (max-width: 600px) {
-      .menu-toggle {
-        display: block;
-        width: 100%;
-        text-align: left;
-      }
-
-      nav ul {
-        display: none;
-        flex-direction: column;
-        padding: 0;
-      }
-
-      nav ul.active {
-        display: flex;
-      }
-
-      nav li {
-        width: 100%;
-      }
-
-      .dropdown-content {
-        position: static;
-        box-shadow: none;
-        border-radius: 0;
-      }
-
-      li:hover .dropdown-content,
-      li:focus-within .dropdown-content {
-        display: none;
-      }
-
-      /* JS toggled class for mobile dropdowns */
-      .dropdown.active .dropdown-content {
-        display: block;
-      }
+      .menu-toggle { display: block; width: 100%; text-align: left; }
+      nav ul { display: none; flex-direction: column; padding: 0; }
+      nav ul.active { display: flex; }
+      nav li { width: 100%; }
+      .dropdown-content { position: static; box-shadow: none; border-radius: 0; }
+      li:hover .dropdown-content, li:focus-within .dropdown-content { display: none; }
+      .dropdown.active .dropdown-content { display: block; }
     }
-
-    /* Hero Banner */
-    .hero {
-      width: 100%;
-      line-height: 0;
-    }
-
-    .hero img {
-      width: 100%;
-      height: 300px;
-      display: block;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    /* Content */
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-
-    h1 {
-      text-align: center;
-      color: #1a1a1a;
-      margin-top: 10px;
-    }
-
-    h2 {
-      color: #0066cc;
-      border-bottom: 2px solid #e0e0e0;
-      padding-bottom: 8px;
-      margin-top: 40px;
-    }
-
-    h3 {
-      color: #444444;
-      margin-top: 25px;
-      margin-bottom: 5px;
-    }
-
-    ul {
-      margin-top: 5px;
-    }
-
-    li {
-      margin-bottom: 6px;
-    }
-
-    .button {
-      display: inline-block;
-      background-color: #0066cc;
-      color: white;
-      padding: 14px 28px;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: background-color 0.2s;
-    }
-
-    .button:hover {
-      background-color: #004499;
-    }
-
-    .contact-box {
-      background-color: #ffffff;
-      padding: 20px;
-      border-radius: 8px;
-      margin-top: 20px;
-    }
+    .hero { width: 100%; line-height: 0; }
+    .hero img { width: 100%; height: 300px; display: block; object-fit: cover; object-position: center; }
+    .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+    h1 { text-align: center; color: #1a1a1a; margin-top: 10px; }
+    h2 { color: #0066cc; border-bottom: 2px solid #e0e0e0; padding-bottom: 8px; margin-top: 40px; }
+    .button { display: inline-block; background-color: #0066cc; color: white; padding: 14px 28px; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background-color 0.2s; }
+    .button:hover { background-color: #004499; }
   </style>
 </head>
 <body>
@@ -212,16 +40,17 @@
   <nav>
     <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
     <ul id="nav-menu">
-      <li><a href="#about">About</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
       <li class="dropdown">
-        <a href="#services">Services ▾</a>
+        <a href="services.html">Services ▾</a>
         <div class="dropdown-content">
-          <a href="#project-management">Project Management</a>
-          <a href="#employee-growth">Employee Growth</a>
-          <a href="#hiring">Hiring Assistance</a>
+          <a href="project-management.html">Project Management</a>
+          <a href="employee-growth.html">Employee Growth</a>
+          <a href="hiring.html">Hiring Assistance</a>
         </div>
       </li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
@@ -230,57 +59,21 @@
   </header>
 
   <div class="container">
-
     <h1>Infinite Solutions</h1>
-
-    <h2 id="about">About Us</h2>
+    <h2>Welcome</h2>
     <p>At Infinite Solutions, we strive to help individuals, teams or entire organizations achieve the next phase of your growth journey. We want to help you realize your next steps of potential, establish solid approaches to roadblocks and move towards your next big thing!</p>
-
-    <h2 id="services">Our Services</h2>
-
-    <h3 id="project-management">1) Project Management Training/Services</h3>
-    <ul>
-      <li>Have a large project that you could use help setting up?</li>
-      <li>Are you trying to train up a new project manager and looking for support or approach ideas?</li>
-    </ul>
-
-    <h3 id="employee-growth">2) Employee Growth Opportunities</h3>
-    <ul>
-      <li>Looking at how to develop and guide leaders within your organization?</li>
-      <li>Need some ideas of how to establish outcomes and not just assign tasks to your leaders?</li>
-    </ul>
-
-    <h3 id="hiring">3) Hiring/Interviewing Assistance</h3>
-    <ul>
-      <li>Looking to hire some leaders/directors to a role and not sure where to start?</li>
-      <li>Do you know the needs you have, but not sure how to interview candidates that really fit the mold of what you are looking for?</li>
-    </ul>
-
-    <p>All of these things are important aspects to running and growing your business, and we can help!</p>
-
-    <h2 id="contact">Contact Us</h2>
-    <div class="contact-box">
-      <p>Email: infinite888solutions@gmail.com</p>
-      <a href="mailto:infinite888solutions@gmail.com" class="button">Get in Touch</a>
-    </div>
-
+    <h2>Our Services</h2>
+    <p>We specialize in Project Management Training, Employee Growth Opportunities, and Hiring/Interviewing Assistance. <a href="services.html" class="button">Learn More</a></p>
   </div>
 
   <script>
-    function toggleMenu() {
-      document.getElementById('nav-menu').classList.toggle('active');
-    }
-
-    // Handle dropdown toggling on mobile/tablet
+    function toggleMenu() { document.getElementById('nav-menu').classList.toggle('active'); }
     document.querySelectorAll('.dropdown > a').forEach(link => {
       link.addEventListener('click', function(e) {
         if (window.innerWidth <= 600) {
           e.preventDefault();
           const parent = this.parentElement;
-          // Close other open dropdowns
-          document.querySelectorAll('.dropdown.active').forEach(d => {
-            if (d !== parent) d.classList.remove('active');
-          });
+          document.querySelectorAll('.dropdown.active').forEach(d => { if (d !== parent) d.classList.remove('active'); });
           parent.classList.toggle('active');
         }
       });
