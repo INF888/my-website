@@ -3,18 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hiring Assistance | Infinite Solutions</title>
+  <title>Hiring Support & Talent Acquisition | Infinite Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; background-color: #f5f5f5; color: #333333; line-height: 1.6; }
-    nav { background-color: #0066cc; position: sticky; top: 0; z-index: 1000; width: 100%; }
-    nav ul { list-style: none; display: flex; justify-content: center; max-width: 900px; margin: 0 auto; padding: 0 20px; }
+    body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; color: #2c3e50; line-height: 1.7; }
+    nav { background: linear-gradient(135deg, #004e92 0%, #000428 100%); position: sticky; top: 0; z-index: 1000; width: 100%; box-shadow: 0 2px 12px rgba(0,0,0,0.3); }
+    nav ul { list-style: none; display: flex; justify-content: center; max-width: 1000px; margin: 0 auto; padding: 0 20px; }
     nav li { position: relative; }
-    nav a { display: block; color: white; text-decoration: none; padding: 16px 24px; font-weight: bold; transition: background-color 0.2s; }
-    nav a:hover { background-color: #004499; }
-    .dropdown-content { display: none; position: absolute; background-color: #ffffff; min-width: 220px; box-shadow: 0 8px 16px rgba(0,0,0,0.15); border-radius: 0 0 6px 6px; overflow: hidden; z-index: 1001; }
-    .dropdown-content a { color: #333333; padding: 12px 20px; font-weight: normal; border-bottom: 1px solid #f0f0f0; }
-    .dropdown-content a:hover { background-color: #f5f5f5; color: #0066cc; }
+    nav a { display: block; color: #ffffff; text-decoration: none; padding: 18px 26px; font-weight: 500; font-size: 15px; letter-spacing: 0.3px; transition: all 0.25s ease; }
+    nav a:hover { background-color: rgba(255,255,255,0.12); color: #4fc3f7; }
+    .dropdown-content { display: none; position: absolute; background-color: #ffffff; min-width: 240px; box-shadow: 0 10px 28px rgba(0,0,0,0.18); border-radius: 0 0 8px 8px; overflow: hidden; z-index: 1001; }
+    .dropdown-content a { color: #2c3e50; padding: 14px 22px; font-weight: 400; border-bottom: 1px solid #eef2f7; transition: all 0.2s ease; }
+    .dropdown-content a:hover { background-color: #f0f6ff; color: #004e92; padding-left: 28px; }
     li:hover .dropdown-content, li:focus-within .dropdown-content { display: block; }
     .menu-toggle { display: none; background: none; border: none; color: white; font-size: 24px; padding: 14px 20px; cursor: pointer; }
     @media (max-width: 600px) {
@@ -26,11 +29,51 @@
       li:hover .dropdown-content, li:focus-within .dropdown-content { display: none; }
       .dropdown.active .dropdown-content { display: block; }
     }
-    .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
-    h1 { text-align: center; color: #1a1a1a; margin-bottom: 20px; }
-    h2 { color: #0066cc; border-bottom: 2px solid #e0e0e0; padding-bottom: 8px; margin-top: 30px; }
-    ul { margin-top: 10px; }
-    li { margin-bottom: 8px; }
+
+    /* Hero Section */
+    .hero { background: linear-gradient(135deg, #004e92 0%, #000428 100%); color: #ffffff; padding: 70px 20px 60px; text-align: center; }
+    .hero h1 { font-size: 2.6rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 14px; }
+    .hero .subtitle { font-family: 'Merriweather', serif; font-size: 1.15rem; font-weight: 400; color: #b3d9ff; max-width: 700px; margin: 0 auto; font-style: italic; }
+
+    /* Main Container */
+    .container { max-width: 920px; margin: 0 auto; padding: 50px 20px; }
+
+    /* Intro Paragraph */
+    .intro { font-size: 1.1rem; color: #4a5568; margin-bottom: 40px; padding: 24px 28px; background: #ffffff; border-left: 5px solid #004e92; border-radius: 0 8px 8px 0; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+
+    /* Section Headings */
+    h2 { font-size: 1.6rem; font-weight: 700; color: #004e92; border-bottom: 3px solid #e2e8f0; padding-bottom: 10px; margin-top: 48px; margin-bottom: 20px; letter-spacing: -0.3px; }
+    h2 .icon { display: inline-block; margin-right: 8px; }
+
+    /* Sub-headings within sections */
+    h3 { font-size: 1.05rem; font-weight: 600; color: #1a365d; margin-top: 22px; margin-bottom: 8px; }
+
+    /* Service Lists */
+    .service-list { list-style: none; margin-top: 14px; padding: 0; }
+    .service-list li { padding: 12px 0 12px 28px; position: relative; border-bottom: 1px solid #edf2f7; font-size: 0.98rem; color: #4a5568; transition: padding-left 0.2s ease; }
+    .service-list li:hover { padding-left: 34px; color: #2c3e50; }
+    .service-list li::before { content: "▸"; position: absolute; left: 0; top: 12px; color: #004e92; font-weight: bold; font-size: 1.1rem; }
+    .service-list li strong { color: #1a365d; font-weight: 600; }
+
+    /* Why Partner Cards */
+    .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 20px; }
+    .card { background: #ffffff; padding: 24px; border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border-top: 4px solid #004e92; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+    .card h3 { margin-top: 0; color: #004e92; font-size: 1.05rem; }
+    .card p { font-size: 0.92rem; color: #4a5568; margin-top: 6px; }
+
+    @media (max-width: 600px) {
+      .cards { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.8rem; }
+      .hero .subtitle { font-size: 1rem; }
+    }
+
+    /* CTA Section */
+    .cta { text-align: center; margin-top: 56px; padding: 40px 20px; background: linear-gradient(135deg, #004e92 0%, #000428 100%); border-radius: 12px; color: #ffffff; }
+    .cta h2 { color: #ffffff; border-bottom: none; margin-top: 0; }
+    .cta p { font-size: 1.05rem; color: #b3d9ff; margin-bottom: 24px; }
+    .cta-btn { display: inline-block; background-color: #4fc3f7; color: #000428; font-weight: 700; font-size: 1rem; padding: 14px 40px; border-radius: 50px; text-decoration: none; transition: all 0.25s ease; letter-spacing: 0.5px; }
+    .cta-btn:hover { background-color: #ffffff; transform: scale(1.05); }
   </style>
 </head>
 <body>
@@ -45,21 +88,97 @@
         <div class="dropdown-content">
           <a href="project-management.html">Project Management</a>
           <a href="employee-growth.html">Employee Growth</a>
-          <a href="hiring.html">Hiring Assistance</a>
+          <a href="hiring.html">Hiring Support/Talent Acquisition</a>
         </div>
       </li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html">Contact</a>
+      </li>
     </ul>
   </nav>
 
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Hiring Support & Talent Acquisition</h1>
+    <p class="subtitle">We Find the Right People — You Choose the Perfect Fit</p>
+  </section>
+
   <div class="container">
-    <h1>Hiring/Interviewing Assistance</h1>
-    <ul>
-      <li>Looking to hire some leaders or project managers and not sure where to start? How do you scale your business with the right team members, while keeping your focus on goals and overall company trajectory?</li>
-      <li>Do you understand the skills you're looking for, but not sure how to interview candidates that really fit the mold for your team? What does a good candidate look like, and how can you feel confident they are a solid fit for your team?</li>
+
+    <!-- Intro -->
+    <p class="intro">
+      Looking to hire leaders or project managers but not sure where to start? How do you scale your business with the right team members while keeping your focus on goals and overall company trajectory? We understand the skills you're looking for — and we know how to identify candidates who truly fit the mold. From defining the role to conducting technical interviews, we filter the noise and deliver a refined candidate pool so you can focus on what matters most: selecting the person who aligns with your company culture and team energy.
+    </p>
+
+    <!-- Role Definition & Strategy -->
+    <h2><span class="icon">🎯</span>Role Definition & Hiring Strategy</h2>
+    <p style="color: #4a5568; margin-bottom: 10px;">Before you can hire the right person, you need to know exactly what you're looking for. We help you:</p>
+    <ul class="service-list">
+      <li><strong>Role Architecture</strong> — Define clear job descriptions, required competencies, preferred qualifications, and performance expectations tailored to your industry and organizational structure.</li>
+      <li><strong>Hiring Roadmaps</strong> — Develop a structured hiring plan aligned with your growth trajectory, identifying which roles to fill, in what order, and with what level of seniority.</li>
+      <li><strong>Compensation Benchmarking</strong> — Provide market-driven salary and benefits guidance to ensure your offers are competitive without overextending your budget.</li>
+      <li><strong>Candidate Persona Development</strong> — Go beyond the job description. We help you define the intangible qualities — work ethic, adaptability, leadership style, communication approach — that define a great fit for your team.</li>
     </ul>
-    
-    <p>We help you define the role, craft effective interview questions, and identify the candidates who will truly elevate your team. We can even perform interviews to filter the right candidates into a solid pipeline for your team, reducing the candidate pool and helping you focus on the right fit once solid people are identified.</p>
+
+    <!-- Interviewing Support -->
+    <h2><span class="icon">🎤</span>Interviewing Support & Technical Screening</h2>
+    <p style="color: #4a5568; margin-bottom: 10px;">We serve as subject matter experts in your field, conducting interviews that go surface-level answers to reveal true capability:</p>
+    <ul class="service-list">
+      <li><strong>Technical & Behavioral Interviewing</strong> — We conduct in-depth interviews that assess both hard skills and behavioral fit, using proven frameworks like STAR (Situation, Task, Action, Result) to evaluate real-world competency.</li>
+      <li><strong>Subject Matter Expert Screening</strong> — As experienced practitioners in project management, leadership development, and operations, we ask the questions that reveal whether a candidate truly knows their craft — or just knows the buzzwords.</li>
+      <li><strong>Custom Interview Question Banks</strong> — Build tailored question sets for each role that test specific competencies, problem-solving ability, and cultural alignment — not generic questions anyone can prep for.</li>
+      <li><strong>Practical Assessments & Case Studies</strong> — Design real-world exercises and scenario-based assessments that show you how a candidate thinks, communicates, and executes under pressure.</li>
+      <li><strong>Interview Panel Coaching</strong> — Train your internal interviewers on effective questioning techniques, bias mitigation, note-taking standards, and calibration — so your whole team interviews with consistency and confidence.</li>
+      <li><strong>Scorecards & Evaluation Frameworks</strong> — Implement structured scorecards that rate candidates against defined criteria, removing gut-feel hiring and replacing it with data-driven decisions.</li>
+    </ul>
+
+    <!-- Candidate Pipeline Management -->
+    <h2><span class="icon">📊</span>Candidate Pipeline Management</h2>
+    <p style="color: #4a5568; margin-bottom: 10px;">We do the heavy lifting so you don't have to. Our pipeline management process includes:</p>
+    <ul class="service-list">
+      <li><strong>Initial Screening & Filtering</strong> — Review applications, conduct phone screens, and filter out candidates who don't meet the baseline requirements — saving your team hours of review time.</li>
+      <li><strong>Deep-Dive Candidate Interviews</strong> — Conduct multiple rounds of interviews — technical, behavioral, and cultural — to thoroughly vet each candidate before they ever reach your desk.</li>
+      <li><strong>Reference Verification</strong> — Perform structured reference checks that go beyond "would you hire them again" to uncover work style, strengths, growth areas, and team dynamics.</li>
+      <li><strong>Refined Candidate Pools</strong> — Deliver a short list of 2–5 highly qualified, pre-vetted candidates — each with a detailed assessment summary, strengths/weaknesses analysis, and our recommendation on fit.</li>
+      <li><strong>Final Selection Support</strong> — Sit with your team during final interviews, provide real-time observations, and facilitate decision-making discussions to help you confidently select the right person.</li>
+    </ul>
+
+    <!-- Onboarding & Retention -->
+    <h2><span class="icon">🚀</span>Onboarding & Retention Strategy</h2>
+    <p style="color: #4a5568; margin-bottom: 10px;">Hiring is only half the battle. We help you set new hires up for long-term success:</p>
+    <ul class="service-list">
+      <li><strong>Structured Onboarding Plans</strong> — Develop 30/60/90-day onboarding roadmaps that accelerate ramp-up time and establish clear early expectations.</li>
+      <li><strong>First-Year Check-Ins</strong> — Provide periodic check-in frameworks to assess new hire integration, address concerns early, and course-correct before small issues become turnover.</li>
+      <li><strong>Retention Strategy Consulting</strong> — Identify the factors that keep your best people engaged and build retention strategies that reduce costly turnover.</li>
+    </ul>
+
+    <!-- Why Partner With Us -->
+    <h2><span class="icon">🤝</span>Why Partner With Us?</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>You Stay Focused on Your Business</h3>
+        <p>We handle the sourcing, screening, and interviewing — so you spend your time only on final selections, not sifting through dozens of unqualified resumes.</p>
+      </div>
+      <div class="card">
+        <h3>Subject Matter Expertise</h3>
+        <p>We speak the language of your industry. Our interviews test real competency, not rehearsed answers — because we've done the work ourselves.</p>
+      </div>
+      <div class="card">
+        <h3>Culture-First Matching</h3>
+        <p>Skills can be taught; culture fit cannot. Every candidate we present has been evaluated for how they'll complement your team's energy and working style.</p>
+      </div>
+      <div class="card">
+        <h3>Refined, Not Overwhelming</h3>
+        <p>You won't get 20 resumes to review. You'll get 2–5 exceptional candidates — each one ready to contribute, vetted, and backed by our detailed assessment.</p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta">
+      <h2>Ready to Build Your Dream Team?</h2>
+      <p>Let's find the people who will take your organization to the next level.</p>
+      <a href="contact.html" class="cta-btn">Contact Us Today</a>
+    </div>
+
   </div>
 
   <script>
@@ -78,4 +197,3 @@
 
 </body>
 </html>
-
