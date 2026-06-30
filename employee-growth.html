@@ -4,17 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Employee Growth | Infinite Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; background-color: #f5f5f5; color: #333333; line-height: 1.6; }
-    nav { background-color: #0066cc; position: sticky; top: 0; z-index: 1000; width: 100%; }
-    nav ul { list-style: none; display: flex; justify-content: center; max-width: 900px; margin: 0 auto; padding: 0 20px; }
+    body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; color: #2c3e50; line-height: 1.7; }
+    nav { background: linear-gradient(135deg, #004e92 0%, #000428 100%); position: sticky; top: 0; z-index: 1000; width: 100%; box-shadow: 0 2px 12px rgba(0,0,0,0.3); }
+    nav ul { list-style: none; display: flex; justify-content: center; max-width: 1000px; margin: 0 auto; padding: 0 20px; }
     nav li { position: relative; }
-    nav a { display: block; color: white; text-decoration: none; padding: 16px 24px; font-weight: bold; transition: background-color 0.2s; }
-    nav a:hover { background-color: #004499; }
-    .dropdown-content { display: none; position: absolute; background-color: #ffffff; min-width: 220px; box-shadow: 0 8px 16px rgba(0,0,0,0.15); border-radius: 0 0 6px 6px; overflow: hidden; z-index: 1001; }
-    .dropdown-content a { color: #333333; padding: 12px 20px; font-weight: normal; border-bottom: 1px solid #f0f0f0; }
-    .dropdown-content a:hover { background-color: #f5f5f5; color: #0066cc; }
+    nav a { display: block; color: #ffffff; text-decoration: none; padding: 18px 26px; font-weight: 500; font-size: 15px; letter-spacing: 0.3px; transition: all 0.25s ease; }
+    nav a:hover { background-color: rgba(255,255,255,0.12); color: #4fc3f7; }
+    .dropdown-content { display: none; position: absolute; background-color: #ffffff; min-width: 240px; box-shadow: 0 10px 28px rgba(0,0,0,0.18); border-radius: 0 0 8px 8px; overflow: hidden; z-index: 1001; }
+    .dropdown-content a { color: #2c3e50; padding: 14px 22px; font-weight: 400; border-bottom: 1px solid #eef2f7; transition: all 0.2s ease; }
+    .dropdown-content a:hover { background-color: #f0f6ff; color: #004e92; padding-left: 28px; }
     li:hover .dropdown-content, li:focus-within .dropdown-content { display: block; }
     .menu-toggle { display: none; background: none; border: none; color: white; font-size: 24px; padding: 14px 20px; cursor: pointer; }
     @media (max-width: 600px) {
@@ -26,11 +29,51 @@
       li:hover .dropdown-content, li:focus-within .dropdown-content { display: none; }
       .dropdown.active .dropdown-content { display: block; }
     }
-    .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
-    h1 { text-align: center; color: #1a1a1a; margin-bottom: 20px; }
-    h2 { color: #0066cc; border-bottom: 2px solid #e0e0e0; padding-bottom: 8px; margin-top: 30px; }
-    ul { margin-top: 10px; }
-    li { margin-bottom: 8px; }
+
+    /* Hero Section */
+    .hero { background: linear-gradient(135deg, #004e92 0%, #000428 100%); color: #ffffff; padding: 70px 20px 60px; text-align: center; }
+    .hero h1 { font-size: 2.6rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 14px; }
+    .hero .subtitle { font-family: 'Merriweather', serif; font-size: 1.15rem; font-weight: 400; color: #b3d9ff; max-width: 700px; margin: 0 auto; font-style: italic; }
+
+    /* Main Container */
+    .container { max-width: 920px; margin: 0 auto; padding: 50px 20px; }
+
+    /* Intro Paragraph */
+    .intro { font-size: 1.1rem; color: #4a5568; margin-bottom: 40px; padding: 24px 28px; background: #ffffff; border-left: 5px solid #004e92; border-radius: 0 8px 8px 0; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+
+    /* Section Headings */
+    h2 { font-size: 1.6rem; font-weight: 700; color: #004e92; border-bottom: 3px solid #e2e8f0; padding-bottom: 10px; margin-top: 48px; margin-bottom: 20px; letter-spacing: -0.3px; }
+    h2 .icon { display: inline-block; margin-right: 8px; }
+
+    /* Sub-headings within sections */
+    h3 { font-size: 1.05rem; font-weight: 600; color: #1a365d; margin-top: 22px; margin-bottom: 8px; }
+
+    /* Service Lists */
+    .service-list { list-style: none; margin-top: 14px; padding: 0; }
+    .service-list li { padding: 12px 0 12px 28px; position: relative; border-bottom: 1px solid #edf2f7; font-size: 0.98rem; color: #4a5568; transition: padding-left 0.2s ease; }
+    .service-list li:hover { padding-left: 34px; color: #2c3e50; }
+    .service-list li::before { content: "▸"; position: absolute; left: 0; top: 12px; color: #004e92; font-weight: bold; font-size: 1.1rem; }
+    .service-list li strong { color: #1a365d; font-weight: 600; }
+
+    /* Why Partner Cards */
+    .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 20px; }
+    .card { background: #ffffff; padding: 24px; border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border-top: 4px solid #004e92; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+    .card h3 { margin-top: 0; color: #004e92; font-size: 1.05rem; }
+    .card p { font-size: 0.92rem; color: #4a5568; margin-top: 6px; }
+
+    @media (max-width: 600px) {
+      .cards { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.8rem; }
+      .hero .subtitle { font-size: 1rem; }
+    }
+
+    /* CTA Section */
+    .cta { text-align: center; margin-top: 56px; padding: 40px 20px; background: linear-gradient(135deg, #004e92 0%, #000428 100%); border-radius: 12px; color: #ffffff; }
+    .cta h2 { color: #ffffff; border-bottom: none; margin-top: 0; }
+    .cta p { font-size: 1.05rem; color: #b3d9ff; margin-bottom: 24px; }
+    .cta-btn { display: inline-block; background-color: #4fc3f7; color: #000428; font-weight: 700; font-size: 1rem; padding: 14px 40px; border-radius: 50px; text-decoration: none; transition: all 0.25s ease; letter-spacing: 0.5px; }
+    .cta-btn:hover { background-color: #ffffff; transform: scale(1.05); }
   </style>
 </head>
 <body>
@@ -52,14 +95,83 @@
     </ul>
   </nav>
 
-  <div class="container">
+  <!-- Hero Section -->
+  <section class="hero">
     <h1>Employee Growth Opportunities</h1>
-    <ul>
-      <li>Looking at how to develop and guide leaders within your organization?</li>
-      <li>Need some ideas of how to establish outcomes and not just assign tasks to your leaders?</li>
+    <p class="subtitle">Turning Employees Into Leaders — And Leaders Into Visionaries</p>
+  </section>
+
+  <div class="container">
+
+    <!-- Intro -->
+    <p class="intro">
+      Looking at how to develop and guide leaders within your organization? Need ideas on how to establish outcomes and not just assign tasks to your leaders? We help you create structured development paths that transform individual contributors into confident leaders — and equip your existing leaders with the strategic vision to drive your organization forward.
+    </p>
+
+    <!-- Developing Leaders -->
+    <h2><span class="icon">🌱</span>Developing Leaders</h2>
+    <p style="color: #4a5568; margin-bottom: 10px;">Leadership isn't just a title — it's a skill set that must be intentionally cultivated. We work with you to:</p>
+    <ul class="service-list">
+      <li><strong>Leadership Assessments</strong> — Evaluate current capabilities, identify high-potential employees, and map each individual's readiness for increased responsibility.</li>
+      <li><strong>Outcome-Driven Development Plans</strong> — Move beyond task assignment. We help you define clear, measurable leadership outcomes that challenge your people to think strategically, own decisions, and drive results.</li>
+      <li><strong>Executive Coaching & Mentoring</strong> — Provide one-on-one coaching sessions focused on decision-making, emotional intelligence, conflict resolution, and strategic thinking — tailored to each leader's growth areas.</li>
+      <li><strong>Communication & Influence Training</strong> — Develop leaders who can articulate vision, align teams, communicate up and down the chain, and inspire confidence across all levels of the organization.</li>
+      <li><strong>Delegation & Empowerment</strong> — Teach leaders how to delegate effectively, trust their teams, and create accountability structures that foster ownership rather than micromanagement.</li>
+      <li><strong>Performance Management Frameworks</strong> — Implement review processes that focus on growth, continuous feedback, and forward-looking development — not just retrospective grading.</li>
     </ul>
-    
-    <p>We help you create development paths that turn employees into leaders and leaders into visionaries.</p>
+
+    <!-- Training Project Managers -->
+    <h2><span class="icon">📋</span>Training Project Managers</h2>
+    <p style="color: #4a5568; margin-bottom: 10px;">Project management is one of the most critical — and most underdeveloped — leadership roles in any organization. We provide:</p>
+    <ul class="service-list">
+      <li><strong>Foundational PM Training</strong> — Equip new and aspiring project managers with core skills: scope definition, scheduling, budgeting, risk management, and stakeholder communication.</li>
+      <li><strong>Methodology Selection & Implementation</strong> — Help your team understand when to use Agile, Waterfall, Hybrid, or custom approaches — and how to execute them effectively.</li>
+      <li><strong>Tool Proficiency</strong> — Hands-on training with industry-standard PM tools and platforms, ensuring your team can manage projects efficiently and transparently.</li>
+      <li><strong>Real-World Scenario Coaching</strong> — Put your PMs through realistic project simulations — scope changes, resource conflicts, tight deadlines — so they're prepared before it counts.</li>
+      <li><strong>PM Career Pathing</strong> — Define clear progression from junior PM to senior PM to program director, with the competencies and milestones required at each stage.</li>
+      <li><strong>PMO Integration Support</strong> — Help newly trained PMs integrate into your existing PMO or assist in standing one up from scratch with properly trained staff.</li>
+    </ul>
+
+    <!-- Transitions & Succession Planning -->
+    <h2><span class="icon">🔄</span>Transitions & Succession Planning</h2>
+    <p style="color: #4a5568; margin-bottom: 10px;">Whether you're facing a leadership departure, a reorganization, or planned growth — we help you navigate change with confidence:</p>
+    <ul class="service-list">
+      <li><strong>Succession Planning Strategy</strong> — Identify critical roles across your organization, assess bench strength, and build succession pipelines so you're never caught off guard by a departure.</li>
+      <li><strong>Knowledge Transfer Programs</strong> — Structure formal knowledge transfer processes between outgoing and incoming leaders — capturing institutional knowledge before it walks out the door.</li>
+      <li><strong>Transition Roadmaps</strong> — Develop phased transition plans with clear timelines, milestones, and accountability checkpoints to ensure continuity of operations.</li>
+      <li><strong>Interim Leadership Support</strong> — Provide experienced interim leadership or advisory support during transition periods to maintain stability and momentum.</li>
+      <li><strong>Change Management Coaching</strong> — Support teams through the emotional and operational disruption of leadership changes, reorganizations, or strategic pivots.</li>
+      <li><strong>Organizational Design Consulting</strong> — Evaluate your current org structure and recommend changes that align reporting lines, roles, and responsibilities with your strategic objectives.</li>
+    </ul>
+
+    <!-- Why Partner With Us -->
+    <h2><span class="icon">🤝</span>Why Partner With Us?</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Tailored to Your Culture</h3>
+        <p>Every development plan is customized to your organization's values, industry, and growth stage — not a one-size-fits-all template.</p>
+      </div>
+      <div class="card">
+        <h3>Practical, Not Theoretical</h3>
+        <p>We focus on real-world application — your people walk away with skills they can use on Monday morning, not just concepts from a textbook.</p>
+      </div>
+      <div class="card">
+        <h3>Long-Term Focus</h3>
+        <p>We don't just train and leave. We help you build sustainable systems that continue developing leaders long after our engagement ends.</p>
+      </div>
+      <div class="card">
+        <h3>Measurable Results</h3>
+        <p>Every program includes defined success metrics so you can see the impact on retention, promotion readiness, and team performance.</p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta">
+      <h2>Ready to Invest in Your People?</h2>
+      <p>Let's build a development plan that grows your team and your business.</p>
+      <a href="contact.html" class="cta-btn">Contact Us Today</a>
+    </div>
+
   </div>
 
   <script>
@@ -78,4 +190,3 @@
 
 </body>
 </html>
-
