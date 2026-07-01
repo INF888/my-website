@@ -4,17 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us | Infinite Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; background-color: #f5f5f5; color: #333333; line-height: 1.6; }
-    nav { background-color: #0066cc; position: sticky; top: 0; z-index: 1000; width: 100%; }
-    nav ul { list-style: none; display: flex; justify-content: center; max-width: 900px; margin: 0 auto; padding: 0 20px; }
+    body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; color: #2c3e50; line-height: 1.7; }
+    nav { background: linear-gradient(135deg, #004e92 0%, #000428 100%); position: sticky; top: 0; z-index: 1000; width: 100%; box-shadow: 0 2px 12px rgba(0,0,0,0.3); }
+    nav ul { list-style: none; display: flex; justify-content: center; max-width: 1000px; margin: 0 auto; padding: 0 20px; }
     nav li { position: relative; }
-    nav a { display: block; color: white; text-decoration: none; padding: 16px 24px; font-weight: bold; transition: background-color 0.2s; }
-    nav a:hover { background-color: #004499; }
-    .dropdown-content { display: none; position: absolute; background-color: #ffffff; min-width: 220px; box-shadow: 0 8px 16px rgba(0,0,0,0.15); border-radius: 0 0 6px 6px; overflow: hidden; z-index: 1001; }
-    .dropdown-content a { color: #333333; padding: 12px 20px; font-weight: normal; border-bottom: 1px solid #f0f0f0; }
-    .dropdown-content a:hover { background-color: #f5f5f5; color: #0066cc; }
+    nav a { display: block; color: #ffffff; text-decoration: none; padding: 18px 26px; font-weight: 500; font-size: 15px; letter-spacing: 0.3px; transition: all 0.25s ease; }
+    nav a:hover { background-color: rgba(255,255,255,0.12); color: #4fc3f7; }
+    .dropdown-content { display: none; position: absolute; background-color: #ffffff; min-width: 240px; box-shadow: 0 10px 28px rgba(0,0,0,0.18); border-radius: 0 0 8px 8px; overflow: hidden; z-index: 1001; }
+    .dropdown-content a { color: #2c3e50; padding: 14px 22px; font-weight: 400; border-bottom: 1px solid #eef2f7; transition: all 0.2s ease; }
+    .dropdown-content a:hover { background-color: #f0f6ff; color: #004e92; padding-left: 28px; }
     li:hover .dropdown-content, li:focus-within .dropdown-content { display: block; }
     .menu-toggle { display: none; background: none; border: none; color: white; font-size: 24px; padding: 14px 20px; cursor: pointer; }
     @media (max-width: 600px) {
@@ -26,9 +29,41 @@
       li:hover .dropdown-content, li:focus-within .dropdown-content { display: none; }
       .dropdown.active .dropdown-content { display: block; }
     }
-    .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
-    h1 { text-align: center; color: #1a1a1a; margin-bottom: 20px; }
-    h2 { color: #0066cc; border-bottom: 2px solid #e0e0e0; padding-bottom: 8px; margin-top: 30px; }
+
+    /* Hero Section */
+    .hero { background: linear-gradient(135deg, #004e92 0%, #000428 100%); color: #ffffff; padding: 70px 20px 60px; text-align: center; }
+    .hero h1 { font-size: 2.6rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 14px; }
+    .hero .subtitle { font-family: 'Merriweather', serif; font-size: 1.15rem; font-weight: 400; color: #b3d9ff; max-width: 700px; margin: 0 auto; font-style: italic; }
+
+    /* Main Container */
+    .container { max-width: 920px; margin: 0 auto; padding: 50px 20px; }
+
+    /* Intro Paragraph */
+    .intro { font-size: 1.1rem; color: #4a5568; margin-bottom: 40px; padding: 24px 28px; background: #ffffff; border-left: 5px solid #004e92; border-radius: 0 8px 8px 0; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+
+    /* Section Headings */
+    h2 { font-size: 1.6rem; font-weight: 700; color: #004e92; border-bottom: 3px solid #e2e8f0; padding-bottom: 10px; margin-top: 48px; margin-bottom: 20px; letter-spacing: -0.3px; }
+    h2 .icon { display: inline-block; margin-right: 8px; }
+
+    /* Values Cards */
+    .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 20px; }
+    .card { background: #ffffff; padding: 24px; border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border-top: 4px solid #004e92; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+    .card h3 { margin-top: 0; color: #004e92; font-size: 1.05rem; }
+    .card p { font-size: 0.92rem; color: #4a5568; margin-top: 6px; }
+
+    @media (max-width: 600px) {
+      .cards { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 1.8rem; }
+      .hero .subtitle { font-size: 1rem; }
+    }
+
+    /* CTA Section */
+    .cta { text-align: center; margin-top: 56px; padding: 40px 20px; background: linear-gradient(135deg, #004e92 0%, #000428 100%); border-radius: 12px; color: #ffffff; }
+    .cta h2 { color: #ffffff; border-bottom: none; margin-top: 0; }
+    .cta p { font-size: 1.05rem; color: #b3d9ff; margin-bottom: 24px; }
+    .cta-btn { display: inline-block; background-color: #4fc3f7; color: #000428; font-weight: 700; font-size: 1rem; padding: 14px 40px; border-radius: 50px; text-decoration: none; transition: all 0.25s ease; letter-spacing: 0.5px; }
+    .cta-btn:hover { background-color: #ffffff; transform: scale(1.05); }
   </style>
 </head>
 <body>
@@ -43,18 +78,61 @@
         <div class="dropdown-content">
           <a href="project-management.html">Project Management</a>
           <a href="employee-growth.html">Employee Growth</a>
-          <a href="hiring.html">Hiring Assistance</a>
+          <a href="hiring.html">Hiring Support/Talent Acquisition</a>
+          <a href="bookkeeping.html">Bookkeeping/Financial Management</a>
         </div>
       </li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
-  <div class="container">
+  <!-- Hero Section -->
+  <section class="hero">
     <h1>About Us</h1>
-    <p>At Infinite Solutions, we strive to help individuals, teams or entire organizations achieve the next phase of your growth journey. We want to help you realize your next steps of potential, establish solid approaches to roadblocks and move towards your next big thing!</p>
-    <h2>Our Mission</h2>
-    <p>We believe every organization has untapped potential. Our goal is to provide the tools, training, and guidance needed to unlock that potential and drive meaningful growth.</p>
+    <p class="subtitle">Your partner for growth, leadership, and organizational excellence</p>
+  </section>
+
+  <div class="container">
+
+    <!-- Intro -->
+    <p class="intro">
+      At Infinite Solutions, we strive to help individuals, teams, and entire organizations achieve the next phase of their growth journey. We want to help you realize your next steps of potential, establish solid approaches to roadblocks, and move confidently toward your next big thing.
+    </p>
+
+    <!-- Our Mission -->
+    <h2><span class="icon">🎯</span>Our Mission</h2>
+    <p style="color: #4a5568; font-size: 1.02rem;">
+      We believe every organization has untapped potential. Our goal is to provide the tools, training, and guidance needed to unlock that potential and drive meaningful growth. Whether you need a project manager to lead a critical initiative, a hiring partner to build your team, leadership development to grow from within, or financial management to keep your business on track — we meet you where you are and help you get to where you want to be.
+    </p>
+
+    <!-- What We Value -->
+    <h2><span class="icon">💎</span>What We Value</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Partnership Over Consulting</h3>
+        <p>We don't just give advice and walk away. We embed with your team, own the outcomes, and work alongside you until the job is done.</p>
+      </div>
+      <div class="card">
+        <h3>Practical Over Theoretical</h3>
+        <p>Every recommendation we make is grounded in real-world experience. If we haven't done it ourselves, we won't suggest it to you.</p>
+      </div>
+      <div class="card">
+        <h3>Clarity Over Complexity</h3>
+        <p>We cut through the noise — whether it's project plans, financial reports, or hiring decisions — and give you clear, actionable direction.</p>
+      </div>
+      <div class="card">
+        <h3>Growth Over Status Quo</h3>
+        <p>We exist to help you move forward. Every engagement is designed to leave your organization stronger, more capable, and better positioned for what's next.</p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta">
+      <h2>Let's Start a Conversation</h2>
+      <p>Find out how Infinite Solutions can support your goals.</p>
+      <a href="contact.html" class="cta-btn">Contact Us Today</a>
+    </div>
+
   </div>
 
   <script>
