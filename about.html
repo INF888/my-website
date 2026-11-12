@@ -45,6 +45,23 @@
     h2 { font-size: 1.6rem; font-weight: 700; color: #004e92; border-bottom: 3px solid #e2e8f0; padding-bottom: 10px; margin-top: 48px; margin-bottom: 20px; letter-spacing: -0.3px; }
     h2 .icon { display: inline-block; margin-right: 8px; }
 
+    /* Founder Stats */
+    .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 24px 0; }
+    .stat-box { background: #ffffff; padding: 20px 12px; border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border-top: 4px solid #004e92; text-align: center; }
+    .stat-box .stat-number { font-size: 1.8rem; font-weight: 800; color: #004e92; display: block; line-height: 1.2; }
+    .stat-box .stat-label { font-size: 0.82rem; color: #4a5568; font-weight: 500; margin-top: 4px; display: block; }
+
+    /* Founder Bio */
+    .founder-bio { background: #ffffff; padding: 28px 28px; border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); margin-bottom: 24px; border-left: 4px solid #4fc3f7; }
+    .founder-bio p { font-size: 1rem; color: #4a5568; margin-bottom: 14px; }
+    .founder-bio p:last-child { margin-bottom: 0; }
+
+    /* Experience List */
+    .exp-list { list-style: none; padding: 0; margin-top: 14px; }
+    .exp-list li { padding: 10px 0 10px 28px; position: relative; border-bottom: 1px solid #edf2f7; font-size: 0.98rem; color: #4a5568; }
+    .exp-list li::before { content: "▸"; position: absolute; left: 0; top: 10px; color: #004e92; font-weight: bold; font-size: 1.1rem; }
+    .exp-list li strong { color: #1a365d; font-weight: 600; }
+
     /* Values Cards */
     .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; margin-top: 20px; }
     .card { background: #ffffff; padding: 24px; border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border-top: 4px solid #004e92; transition: transform 0.2s ease, box-shadow 0.2s ease; }
@@ -53,6 +70,7 @@
     .card p { font-size: 0.92rem; color: #4a5568; margin-top: 6px; }
 
     @media (max-width: 600px) {
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
       .cards { grid-template-columns: 1fr; }
       .hero h1 { font-size: 1.8rem; }
       .hero .subtitle { font-size: 1rem; }
@@ -96,14 +114,69 @@
 
     <!-- Intro -->
     <p class="intro">
-      At Infinite Solutions, we strive to help individuals, teams, and entire organizations achieve the next phase of their growth journey. We want to help you realize your next steps of potential, establish solid approaches to roadblocks, and move confidently toward your next big thing.
+      At Infinite Solutions, we want to help you get to the next phase of your growth journey. Whether that means figuring out your next steps, working through roadblocks, or building the confidence to go after your next big thing, we're here to help you get there.
     </p>
 
     <!-- Our Mission -->
     <h2>Our Mission</h2>
     <p style="color: #4a5568; font-size: 1.02rem;">
-      We believe every organization has untapped potential. Our goal is to provide the tools, training, and guidance needed to unlock that potential and drive meaningful growth. Whether you need a project manager to lead a critical initiative, a hiring partner to build your team, leadership development to grow from within, or AI solutions to scale and streamline your operations — we meet you where you are and help you get to where you want to be.
+      Every organization has untapped potential. Our job is to give you the tools, training, and guidance to unlock it. Whether you need a project manager to lead a critical initiative, a hiring partner to build your team, leadership development to grow from within, or AI solutions to scale and streamline your operations, we meet you where you are and help you get to where you want to be.
     </p>
+
+    <!-- Meet the Founder -->
+    <h2><span class="icon">👤</span>Meet the Founder</h2>
+
+    <div class="stats-row">
+      <div class="stat-box">
+        <span class="stat-number">17</span>
+        <span class="stat-label">Years in Technology</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number">$1B+</span>
+        <span class="stat-label">Largest Project Budget</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number">97%+</span>
+        <span class="stat-label">Budget Accuracy</span>
+      </div>
+      <div class="stat-box">
+        <span class="stat-number">400MW</span>
+        <span class="stat-label">Data Center IT Load Managed</span>
+      </div>
+    </div>
+
+    <div class="founder-bio">
+      <p>
+        I've spent 17 years in technology. Ten of those were in telecommunications, and the last seven were building out hyperscale data centers for the biggest tech companies in the world. I've done everything from field engineering to Director of Operations, and along the way I've managed about 400 megawatts of IT load across multiple data centers.
+      </p>
+      <p>
+        The projects I've led ranged from $50,000 initiatives all the way up to $1 billion buildouts. And across all of them, we hit better than 97% budget accuracy, delivered on time or early, and kept safety and quality front and center. I'm PMP certified, and everything I bring to Infinite Solutions comes from actually doing the work, not reading about it in a book.
+      </p>
+    </div>
+
+    <h2><span class="icon">💼</span>Experience at a Glance</h2>
+    <ul class="exp-list">
+      <li><strong>Director of Operations (Telecommunications)</strong> - Oversaw operations, field engineering, and project delivery across complex telecom infrastructure.</li>
+      <li><strong>Technical Program Management</strong> - Ran cross-functional programs for hyperscale data center deployments serving the biggest names in tech.</li>
+      <li><strong>Operations Manager, Multiple Data Centers</strong> - Managed about 400MW of IT load across multiple facilities, keeping safety, quality, and on-time delivery the priority.</li>
+      <li><strong>Project Management, $50K to $1B Budgets</strong> - Delivered projects of all sizes with 97%+ budget accuracy, on time or early.</li>
+      <li><strong>Team Building and Leadership</strong> - Built and grew high-performing teams across multiple organizations, always looking for the gaps and figuring out the smartest way to fill them.</li>
+      <li><strong>AI Sector Deployments</strong> - Led technology deployments powering AI infrastructure at a scale most people never see.</li>
+    </ul>
+
+    <!-- Why Infinite Solutions -->
+    <h2><span class="icon">💡</span>Why I Started Infinite Solutions</h2>
+    <div class="founder-bio">
+      <p>
+        Here's what I kept seeing: the work that got your business started is what you're best at. But scaling to the next level is a whole different thing. It means figuring out what pieces you're missing, how to fill those gaps, and making business decisions that actually support growth without putting everything at risk. That's not always your skill set, and it shouldn't have to be.
+      </p>
+      <p>
+        After almost two decades of building teams, managing massive budgets, and scaling operations for some of the most demanding companies in the world, I saw a real gap. Small and growing businesses need the same kind of strategic help that big companies have access to, but it needs to be practical, personal, and actually fit how they operate.
+      </p>
+      <p>
+        <strong>I built this business to help you build yours.</strong> I'll spend real time with you and your team to understand where you are, where you want to go, and what it's going to take to get there. Then I'll stay engaged with you, with goals and strategies built specifically for your company and your people.
+      </p>
+    </div>
 
     <!-- What We Value -->
     <h2>What We Value</h2>
@@ -118,11 +191,11 @@
       </div>
       <div class="card">
         <h3>Clarity Over Complexity</h3>
-        <p>We cut through the noise — whether it's project plans, financial reports, or hiring decisions — and give you clear, actionable direction.</p>
+        <p>We cut through the noise and give you clear, actionable direction. No jargon, no fluff.</p>
       </div>
       <div class="card">
         <h3>Growth Over Status Quo</h3>
-        <p>We exist to help you move forward. Every engagement is designed to leave your organization stronger, more capable, and better positioned for what's next.</p>
+        <p>We exist to help you move forward. Every engagement is designed to leave your organization stronger and better positioned for what's next.</p>
       </div>
     </div>
 
