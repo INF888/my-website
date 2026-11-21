@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; color: #2c3e50; line-height: 1.7; }
     nav { background: linear-gradient(135deg, #004e92 0%, #000428 100%); position: sticky; top: 0; z-index: 1000; width: 100%; box-shadow: 0 2px 12px rgba(0,0,0,0.3); }
     nav ul { list-style: none; display: flex; justify-content: center; max-width: 1000px; margin: 0 auto; padding: 0 20px; }
@@ -30,10 +31,31 @@
       .dropdown.active .dropdown-content { display: block; }
     }
 
-    /* Hero Section */
-    .hero { background: linear-gradient(135deg, #004e92 0%, #000428 100%); color: #ffffff; padding: 70px 20px 60px; text-align: center; }
-    .hero h1 { font-size: 2.6rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 14px; }
-    .hero .subtitle { font-family: 'Merriweather', serif; font-size: 1.15rem; font-weight: 400; color: #b3d9ff; max-width: 700px; margin: 0 auto; font-style: italic; }
+    /* Parallax Photo Hero */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      min-height: 420px;
+      background-image: linear-gradient(rgba(0,4,40,0.55), rgba(0,4,40,0.8)), url('Duck-ai-image-2026-06-16-19-22.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+    .hero-content { animation: fadeUp 1s ease both; }
+    .hero h1 { color: #ffffff; font-size: 2.9rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 16px; text-shadow: 0 2px 18px rgba(0,0,0,0.45); }
+    .hero .subtitle { font-family: 'Merriweather', serif; font-size: 1.2rem; font-weight: 400; color: #d6ecff; max-width: 700px; margin: 0 auto; font-style: italic; text-shadow: 0 2px 12px rgba(0,0,0,0.4); }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
     /* Main Container */
     .container { max-width: 920px; margin: 0 auto; padding: 50px 20px; }
@@ -60,9 +82,12 @@
     .feature-card h3 { font-size: 1.1rem; font-weight: 700; color: #004e92; margin-bottom: 8px; }
     .feature-card p { font-size: 0.92rem; color: #4a5568; }
 
+    @media (max-width: 768px) {
+      .hero { height: 48vh; min-height: 340px; background-attachment: scroll; }
+    }
     @media (max-width: 600px) {
       .feature-grid { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 1.8rem; }
+      .hero h1 { font-size: 2rem; }
       .hero .subtitle { font-size: 1rem; }
     }
 
@@ -94,17 +119,19 @@
     </ul>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Parallax Photo Hero -->
   <section class="hero">
-    <h1>Deploying AI For Your Company</h1>
-    <p class="subtitle">Scaling your business with intelligent agents that adapt, automate, and streamline your daily operations</p>
+    <div class="hero-content">
+      <h1>Deploying AI For Your Company</h1>
+      <p class="subtitle">Scaling your business with intelligent agents that adapt, automate, and streamline your daily operations</p>
+    </div>
   </section>
 
   <div class="container">
 
     <!-- Intro -->
     <p class="intro">
-      Technology is moving fast — and the companies that adapt are the ones that scale. At Infinite Solutions, we help you cut through the noise and put AI to work in practical, measurable ways. From automating repetitive tasks to building custom agents that handle daily business functions, we make sure new technology fits your workflow — not the other way around.
+      Technology is moving fast, and the companies that adapt are the ones that scale. At Infinite Solutions, we help you cut through the noise and put AI to work in practical, measurable ways. From automating repetitive tasks to building custom agents that handle daily business functions, we make sure new technology fits your workflow, not the other way around.
     </p>
 
     <!-- What We Do -->
@@ -112,7 +139,7 @@
 
     <div class="section-block">
       <h3>AI Strategy &amp; Readiness Assessment</h3>
-      <p>We start by understanding where you are today and where AI can have the biggest impact. No buzzwords — just a clear roadmap for where automation and intelligent agents will save you time and money.</p>
+      <p>We start by understanding where you are today and where AI can have the biggest impact. No buzzwords, just a clear roadmap for where automation and intelligent agents will save you time and money.</p>
       <ul>
         <li>Identify repetitive, time-consuming tasks ready for automation</li>
         <li>Evaluate your existing tools and systems for AI integration</li>
@@ -122,7 +149,7 @@
 
     <div class="section-block">
       <h3>Custom AI Agents For Daily Operations</h3>
-      <p>We design and deploy AI agents tailored to your business — not generic chatbots, but purpose-built assistants that handle real work in your daily workflow.</p>
+      <p>We design and deploy AI agents tailored to your business, not generic chatbots, but purpose-built assistants that handle real work in your daily workflow.</p>
       <ul>
         <li>Customer communication and support automation</li>
         <li>Scheduling, data entry, and document processing</li>
@@ -133,7 +160,7 @@
 
     <div class="section-block">
       <h3>Streamlining Business Functions</h3>
-      <p>AI isn't just about technology — it's about removing friction from how your business runs every day. We help you connect the pieces so your team can focus on growth instead of busywork.</p>
+      <p>AI isn't just about technology. It's about removing friction from how your business runs every day. We help you connect the pieces so your team can focus on growth instead of busywork.</p>
       <ul>
         <li>Automate handoffs between departments and tools</li>
         <li>Reduce manual errors with intelligent validation</li>
@@ -143,7 +170,7 @@
 
     <div class="section-block">
       <h3>Adapting New Technology With Confidence</h3>
-      <p>New tools only help if your team actually uses them. We handle the deployment, training, and change management so adoption sticks — and your people feel empowered, not replaced.</p>
+      <p>New tools only help if your team actually uses them. We handle the deployment, training, and change management so adoption sticks, and your people feel empowered, not replaced.</p>
       <ul>
         <li>Hands-on training for your team on new AI tools and workflows</li>
         <li>Ongoing support and optimization after deployment</li>
@@ -162,12 +189,12 @@
       <div class="feature-card">
         <span class="feature-icon">🔧</span>
         <h3>Scale Smarter</h3>
-        <p>Grow your output without growing your headcount — AI agents handle the repetitive work so your people don't have to.</p>
+        <p>Grow your output without growing your headcount. AI agents handle the repetitive work so your people don't have to.</p>
       </div>
       <div class="feature-card">
         <span class="feature-icon">🧩</span>
         <h3>Fit Your Workflow</h3>
-        <p>We build around how your business already runs — integrating with your existing tools instead of forcing you to start over.</p>
+        <p>We build around how your business already runs, integrating with your existing tools instead of forcing you to start over.</p>
       </div>
       <div class="feature-card">
         <span class="feature-icon">🚀</span>
@@ -201,4 +228,3 @@
 
 </body>
 </html>
-
