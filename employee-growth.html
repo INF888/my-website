@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; color: #2c3e50; line-height: 1.7; }
     nav { background: linear-gradient(135deg, #004e92 0%, #000428 100%); position: sticky; top: 0; z-index: 1000; width: 100%; box-shadow: 0 2px 12px rgba(0,0,0,0.3); }
     nav ul { list-style: none; display: flex; justify-content: center; max-width: 1000px; margin: 0 auto; padding: 0 20px; }
@@ -30,10 +31,31 @@
       .dropdown.active .dropdown-content { display: block; }
     }
 
-    /* Hero Section */
-    .hero { background: linear-gradient(135deg, #004e92 0%, #000428 100%); color: #ffffff; padding: 70px 20px 60px; text-align: center; }
-    .hero h1 { font-size: 2.6rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 14px; }
-    .hero .subtitle { font-family: 'Merriweather', serif; font-size: 1.15rem; font-weight: 400; color: #b3d9ff; max-width: 700px; margin: 0 auto; font-style: italic; }
+    /* Parallax Photo Hero */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      min-height: 420px;
+      background-image: linear-gradient(rgba(0,4,40,0.55), rgba(0,4,40,0.8)), url('Duck-ai-image-2026-06-16-19-22.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+    .hero-content { animation: fadeUp 1s ease both; }
+    .hero h1 { color: #ffffff; font-size: 2.9rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 16px; text-shadow: 0 2px 18px rgba(0,0,0,0.45); }
+    .hero .subtitle { font-family: 'Merriweather', serif; font-size: 1.2rem; font-weight: 400; color: #d6ecff; max-width: 700px; margin: 0 auto; font-style: italic; text-shadow: 0 2px 12px rgba(0,0,0,0.4); }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
     /* Main Container */
     .container { max-width: 920px; margin: 0 auto; padding: 50px 20px; }
@@ -62,9 +84,12 @@
     .card h3 { margin-top: 0; color: #004e92; font-size: 1.05rem; }
     .card p { font-size: 0.92rem; color: #4a5568; margin-top: 6px; }
 
+    @media (max-width: 768px) {
+      .hero { height: 48vh; min-height: 340px; background-attachment: scroll; }
+    }
     @media (max-width: 600px) {
       .cards { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 1.8rem; }
+      .hero h1 { font-size: 2rem; }
       .hero .subtitle { font-size: 1rem; }
     }
 
@@ -88,7 +113,7 @@
         <div class="dropdown-content">
           <a href="project-management.html">Project Management</a>
           <a href="employee-growth.html">Employee Growth</a>
-          <a href="hiring.html">Hiring Assistance</a>
+          <a href="hiring.html">Hiring Support/Talent Acquisition</a>
           <a href="deploying-ai.html">Deploying AI For Your Company</a>
         </div>
       </li>
@@ -96,49 +121,51 @@
     </ul>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Parallax Photo Hero -->
   <section class="hero">
-    <h1>Employee Growth Opportunities</h1>
-    <p class="subtitle">Turning Employees Into Leaders — And Leaders Into Visionaries</p>
+    <div class="hero-content">
+      <h1>Employee Growth Opportunities</h1>
+      <p class="subtitle">Turning Employees Into Leaders, And Leaders Into Visionaries</p>
+    </div>
   </section>
 
   <div class="container">
 
     <!-- Intro -->
     <p class="intro">
-      Looking at how to develop and guide leaders within your organization? Need ideas on how to establish outcomes and not just assign tasks to your leaders? We help you create structured development paths that transform individual contributors into confident leaders — and equip your existing leaders with the strategic vision to drive your organization forward.
+      Looking at how to develop and guide leaders within your organization? Need ideas on how to establish outcomes and not just assign tasks to your leaders? We help you create structured development paths that transform individual contributors into confident leaders, and equip your existing leaders with the strategic vision to drive your organization forward.
     </p>
 
     <!-- Developing Leaders -->
     <h2><span class="icon">🌱</span>Developing Leaders</h2>
-    <p style="color: #4a5568; margin-bottom: 10px;">Leadership isn't just a title — it's a skill set that must be intentionally cultivated. We work with you to:</p>
+    <p style="color: #4a5568; margin-bottom: 10px;">Leadership isn't just a title. It's a skill set that must be intentionally cultivated. We work with you to:</p>
     <ul class="service-list">
       <li><strong>Leadership Assessments</strong> — Evaluate current capabilities, identify high-potential employees, and map each individual's readiness for increased responsibility.</li>
       <li><strong>Outcome-Driven Development Plans</strong> — Move beyond task assignment. We help you define clear, measurable leadership outcomes that challenge your people to think strategically, own decisions, and drive results.</li>
-      <li><strong>Executive Coaching & Mentoring</strong> — Provide one-on-one coaching sessions focused on decision-making, emotional intelligence, conflict resolution, and strategic thinking — tailored to each leader's growth areas.</li>
-      <li><strong>Communication & Influence Training</strong> — Develop leaders who can articulate vision, align teams, communicate up and down the chain, and inspire confidence across all levels of the organization.</li>
-      <li><strong>Delegation & Empowerment</strong> — Teach leaders how to delegate effectively, trust their teams, and create accountability structures that foster ownership rather than micromanagement.</li>
-      <li><strong>Performance Management Frameworks</strong> — Implement review processes that focus on growth, continuous feedback, and forward-looking development — not just retrospective grading.</li>
+      <li><strong>Executive Coaching &amp; Mentoring</strong> — Provide one-on-one coaching sessions focused on decision-making, emotional intelligence, conflict resolution, and strategic thinking, tailored to each leader's growth areas.</li>
+      <li><strong>Communication &amp; Influence Training</strong> — Develop leaders who can articulate vision, align teams, communicate up and down the chain, and inspire confidence across all levels of the organization.</li>
+      <li><strong>Delegation &amp; Empowerment</strong> — Teach leaders how to delegate effectively, trust their teams, and create accountability structures that foster ownership rather than micromanagement.</li>
+      <li><strong>Performance Management Frameworks</strong> — Implement review processes that focus on growth, continuous feedback, and forward-looking development, not just retrospective grading.</li>
     </ul>
 
     <!-- Training Project Managers -->
     <h2><span class="icon">📋</span>Training Project Managers</h2>
-    <p style="color: #4a5568; margin-bottom: 10px;">Project management is one of the most critical — and most underdeveloped — leadership roles in any organization. We provide:</p>
+    <p style="color: #4a5568; margin-bottom: 10px;">Project management is one of the most critical and most underdeveloped leadership roles in any organization. We provide:</p>
     <ul class="service-list">
       <li><strong>Foundational PM Training</strong> — Equip new and aspiring project managers with core skills: scope definition, scheduling, budgeting, risk management, and stakeholder communication.</li>
-      <li><strong>Methodology Selection & Implementation</strong> — Help your team understand when to use Agile, Waterfall, Hybrid, or custom approaches — and how to execute them effectively.</li>
+      <li><strong>Methodology Selection &amp; Implementation</strong> — Help your team understand when to use Agile, Waterfall, Hybrid, or custom approaches, and how to execute them effectively.</li>
       <li><strong>Tool Proficiency</strong> — Hands-on training with industry-standard PM tools and platforms, ensuring your team can manage projects efficiently and transparently.</li>
-      <li><strong>Real-World Scenario Coaching</strong> — Put your PMs through realistic project simulations — scope changes, resource conflicts, tight deadlines — so they're prepared before it counts.</li>
+      <li><strong>Real-World Scenario Coaching</strong> — Put your PMs through realistic project simulations, including scope changes, resource conflicts, and tight deadlines, so they're prepared before it counts.</li>
       <li><strong>PM Career Pathing</strong> — Define clear progression from junior PM to senior PM to program director, with the competencies and milestones required at each stage.</li>
       <li><strong>PMO Integration Support</strong> — Help newly trained PMs integrate into your existing PMO or assist in standing one up from scratch with properly trained staff.</li>
     </ul>
 
     <!-- Transitions & Succession Planning -->
-    <h2><span class="icon">🔄</span>Transitions & Succession Planning</h2>
-    <p style="color: #4a5568; margin-bottom: 10px;">Whether you're facing a leadership departure, a reorganization, or planned growth — we help you navigate change with confidence:</p>
+    <h2><span class="icon">🔄</span>Transitions &amp; Succession Planning</h2>
+    <p style="color: #4a5568; margin-bottom: 10px;">Whether you're facing a leadership departure, a reorganization, or planned growth, we help you navigate change with confidence:</p>
     <ul class="service-list">
       <li><strong>Succession Planning Strategy</strong> — Identify critical roles across your organization, assess bench strength, and build succession pipelines so you're never caught off guard by a departure.</li>
-      <li><strong>Knowledge Transfer Programs</strong> — Structure formal knowledge transfer processes between outgoing and incoming leaders — capturing institutional knowledge before it walks out the door.</li>
+      <li><strong>Knowledge Transfer Programs</strong> — Structure formal knowledge transfer processes between outgoing and incoming leaders, capturing institutional knowledge before it walks out the door.</li>
       <li><strong>Transition Roadmaps</strong> — Develop phased transition plans with clear timelines, milestones, and accountability checkpoints to ensure continuity of operations.</li>
       <li><strong>Interim Leadership Support</strong> — Provide experienced interim leadership or advisory support during transition periods to maintain stability and momentum.</li>
       <li><strong>Change Management Coaching</strong> — Support teams through the emotional and operational disruption of leadership changes, reorganizations, or strategic pivots.</li>
@@ -150,11 +177,11 @@
     <div class="cards">
       <div class="card">
         <h3>Tailored to Your Culture</h3>
-        <p>Every development plan is customized to your organization's values, industry, and growth stage — not a one-size-fits-all template.</p>
+        <p>Every development plan is customized to your organization's values, industry, and growth stage, not a one-size-fits-all template.</p>
       </div>
       <div class="card">
         <h3>Practical, Not Theoretical</h3>
-        <p>We focus on real-world application — your people walk away with skills they can use on Monday morning, not just concepts from a textbook.</p>
+        <p>We focus on real-world application. Your people walk away with skills they can use on Monday morning, not just concepts from a textbook.</p>
       </div>
       <div class="card">
         <h3>Long-Term Focus</h3>
