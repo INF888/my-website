@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; color: #2c3e50; line-height: 1.7; }
     nav { background: linear-gradient(135deg, #004e92 0%, #000428 100%); position: sticky; top: 0; z-index: 1000; width: 100%; box-shadow: 0 2px 12px rgba(0,0,0,0.3); }
     nav ul { list-style: none; display: flex; justify-content: center; max-width: 1000px; margin: 0 auto; padding: 0 20px; }
@@ -30,10 +31,31 @@
       .dropdown.active .dropdown-content { display: block; }
     }
 
-    /* Hero Section */
-    .hero { background: linear-gradient(135deg, #004e92 0%, #000428 100%); color: #ffffff; padding: 70px 20px 60px; text-align: center; }
-    .hero h1 { font-size: 2.6rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 14px; }
-    .hero .subtitle { font-family: 'Merriweather', serif; font-size: 1.15rem; font-weight: 400; color: #b3d9ff; max-width: 700px; margin: 0 auto; font-style: italic; }
+    /* Parallax Photo Hero */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      min-height: 420px;
+      background-image: linear-gradient(rgba(0,4,40,0.55), rgba(0,4,40,0.8)), url('Duck-ai-image-2026-06-16-19-22.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+    .hero-content { animation: fadeUp 1s ease both; }
+    .hero h1 { color: #ffffff; font-size: 2.9rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 16px; text-shadow: 0 2px 18px rgba(0,0,0,0.45); }
+    .hero .subtitle { font-family: 'Merriweather', serif; font-size: 1.2rem; font-weight: 400; color: #d6ecff; max-width: 700px; margin: 0 auto; font-style: italic; text-shadow: 0 2px 12px rgba(0,0,0,0.4); }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
     /* Main Container */
     .container { max-width: 920px; margin: 0 auto; padding: 50px 20px; }
@@ -62,9 +84,12 @@
     .card h3 { margin-top: 0; color: #004e92; font-size: 1.05rem; }
     .card p { font-size: 0.92rem; color: #4a5568; margin-top: 6px; }
 
+    @media (max-width: 768px) {
+      .hero { height: 48vh; min-height: 340px; background-attachment: scroll; }
+    }
     @media (max-width: 600px) {
       .cards { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 1.8rem; }
+      .hero h1 { font-size: 2rem; }
       .hero .subtitle { font-size: 1rem; }
     }
 
@@ -88,36 +113,38 @@
         <div class="dropdown-content">
           <a href="project-management.html">Project Management</a>
           <a href="employee-growth.html">Employee Growth</a>
-          <a href="hiring.html">Hiring Assistance</a>
-         <a href="deploying-ai.html">Deploying AI For Your Company</a>
+          <a href="hiring.html">Hiring Support/Talent Acquisition</a>
+          <a href="deploying-ai.html">Deploying AI For Your Company</a>
         </div>
       </li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Parallax Photo Hero -->
   <section class="hero">
-    <h1>Project Management Training & Services</h1>
-    <p class="subtitle">Full-Lifecycle Project Management — From Contract Negotiation to Closeout</p>
+    <div class="hero-content">
+      <h1>Project Management Training &amp; Services</h1>
+      <p class="subtitle">Full-Lifecycle Project Management, From Contract Negotiation to Closeout</p>
+    </div>
   </section>
 
   <div class="container">
 
     <!-- Intro -->
     <p class="intro">
-      Have a project that needs expert leadership from start to finish? Whether you're launching a new initiative, recovering a struggling project, or scaling your project management capability, we serve as your dedicated contract Project Management partner — embedded with your team and accountable for results.
+      Have a project that needs expert leadership from start to finish? Whether you're launching a new initiative, recovering a struggling project, or scaling your project management capability, we serve as your dedicated contract Project Management partner, embedded with your team and accountable for results.
     </p>
 
     <!-- What We Do -->
     <h2><span class="icon">📋</span>What We Do</h2>
     <p style="color: #4a5568; margin-bottom: 10px;">We manage the <strong>entire project lifecycle</strong>, including:</p>
     <ul class="service-list">
-      <li><strong>Contract Negotiation & Setup</strong> — Review, negotiate, and finalize vendor and subcontractor agreements; define scope, terms, deliverables, and acceptance criteria before work begins.</li>
-      <li><strong>Project Initiation & Planning</strong> — Develop comprehensive project charters, work breakdown structures (WBS), resource plans, and realistic schedules with clearly defined milestones and critical path analysis.</li>
-      <li><strong>Budgeting & Cost Control</strong> — Establish baselines, track actuals against forecasts, and manage change orders to keep projects financially on track.</li>
+      <li><strong>Contract Negotiation &amp; Setup</strong> — Review, negotiate, and finalize vendor and subcontractor agreements; define scope, terms, deliverables, and acceptance criteria before work begins.</li>
+      <li><strong>Project Initiation &amp; Planning</strong> — Develop comprehensive project charters, work breakdown structures (WBS), resource plans, and realistic schedules with clearly defined milestones and critical path analysis.</li>
+      <li><strong>Budgeting &amp; Cost Control</strong> — Establish baselines, track actuals against forecasts, and manage change orders to keep projects financially on track.</li>
       <li><strong>Risk Management</strong> — Identify, assess, and mitigate risks proactively with contingency planning and ongoing risk register maintenance.</li>
-      <li><strong>Execution & Delivery</strong> — Coordinate cross-functional teams, manage day-to-day operations, facilitate status meetings, and ensure deliverables meet quality standards and deadlines.</li>
+      <li><strong>Execution &amp; Delivery</strong> — Coordinate cross-functional teams, manage day-to-day operations, facilitate status meetings, and ensure deliverables meet quality standards and deadlines.</li>
       <li><strong>Stakeholder Communication</strong> — Provide regular reporting, executive dashboards, and transparent communication channels to keep all stakeholders informed and aligned.</li>
       <li><strong>Quality Assurance</strong> — Implement QA checkpoints, conduct reviews, and ensure compliance with specifications and industry standards throughout execution.</li>
       <li><strong>Change Management</strong> — Evaluate, document, and control scope changes through a formal change control process to prevent scope creep and budget overruns.</li>
@@ -125,13 +152,13 @@
     </ul>
 
     <!-- PMO Development & Training -->
-    <h2><span class="icon">🎓</span>PMO Development & Training</h2>
+    <h2><span class="icon">🎓</span>PMO Development &amp; Training</h2>
     <p style="color: #4a5568; margin-bottom: 10px;">Looking to build internal capability? We also provide:</p>
     <ul class="service-list">
-      <li><strong>PMO Strategy & Design</strong> — Assess your organization's maturity and design a scalable PMO framework tailored to your industry and goals.</li>
-      <li><strong>Project Manager Training & Mentoring</strong> — Hands-on coaching for new and aspiring project managers, covering methodology, tools, leadership, and real-world problem-solving.</li>
+      <li><strong>PMO Strategy &amp; Design</strong> — Assess your organization's maturity and design a scalable PMO framework tailored to your industry and goals.</li>
+      <li><strong>Project Manager Training &amp; Mentoring</strong> — Hands-on coaching for new and aspiring project managers, covering methodology, tools, leadership, and real-world problem-solving.</li>
       <li><strong>Process Standardization</strong> — Develop templates, playbooks, and standardized workflows to ensure consistency across all future projects.</li>
-      <li><strong>Team Building & Staffing Strategy</strong> — Help you identify the right roles, hire the right talent, and structure your project teams for maximum effectiveness.</li>
+      <li><strong>Team Building &amp; Staffing Strategy</strong> — Help you identify the right roles, hire the right talent, and structure your project teams for maximum effectiveness.</li>
     </ul>
 
     <!-- Why Partner With Us -->
@@ -180,5 +207,3 @@
 
 </body>
 </html>
-
-
