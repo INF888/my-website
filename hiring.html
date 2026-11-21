@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; color: #2c3e50; line-height: 1.7; }
     nav { background: linear-gradient(135deg, #004e92 0%, #000428 100%); position: sticky; top: 0; z-index: 1000; width: 100%; box-shadow: 0 2px 12px rgba(0,0,0,0.3); }
     nav ul { list-style: none; display: flex; justify-content: center; max-width: 1000px; margin: 0 auto; padding: 0 20px; }
@@ -30,10 +31,31 @@
       .dropdown.active .dropdown-content { display: block; }
     }
 
-    /* Hero Section */
-    .hero { background: linear-gradient(135deg, #004e92 0%, #000428 100%); color: #ffffff; padding: 70px 20px 60px; text-align: center; }
-    .hero h1 { font-size: 2.6rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 14px; }
-    .hero .subtitle { font-family: 'Merriweather', serif; font-size: 1.15rem; font-weight: 400; color: #b3d9ff; max-width: 700px; margin: 0 auto; font-style: italic; }
+    /* Parallax Photo Hero */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      min-height: 420px;
+      background-image: linear-gradient(rgba(0,4,40,0.55), rgba(0,4,40,0.8)), url('Duck-ai-image-2026-06-16-19-22.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+    .hero-content { animation: fadeUp 1s ease both; }
+    .hero h1 { color: #ffffff; font-size: 2.9rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 16px; text-shadow: 0 2px 18px rgba(0,0,0,0.45); }
+    .hero .subtitle { font-family: 'Merriweather', serif; font-size: 1.2rem; font-weight: 400; color: #d6ecff; max-width: 700px; margin: 0 auto; font-style: italic; text-shadow: 0 2px 12px rgba(0,0,0,0.4); }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
     /* Main Container */
     .container { max-width: 920px; margin: 0 auto; padding: 50px 20px; }
@@ -62,9 +84,12 @@
     .card h3 { margin-top: 0; color: #004e92; font-size: 1.05rem; }
     .card p { font-size: 0.92rem; color: #4a5568; margin-top: 6px; }
 
+    @media (max-width: 768px) {
+      .hero { height: 48vh; min-height: 340px; background-attachment: scroll; }
+    }
     @media (max-width: 600px) {
       .cards { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 1.8rem; }
+      .hero h1 { font-size: 2rem; }
       .hero .subtitle { font-size: 1rem; }
     }
 
@@ -92,59 +117,60 @@
           <a href="deploying-ai.html">Deploying AI For Your Company</a>
         </div>
       </li>
-      <li><a href="contact.html">Contact</a>
-      </li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Parallax Photo Hero -->
   <section class="hero">
-    <h1>Hiring Support & Talent Acquisition</h1>
-    <p class="subtitle">We Find the Right People — You Choose the Perfect Fit</p>
+    <div class="hero-content">
+      <h1>Hiring Support &amp; Talent Acquisition</h1>
+      <p class="subtitle">We Find the Right People, You Choose the Perfect Fit</p>
+    </div>
   </section>
 
   <div class="container">
 
     <!-- Intro -->
     <p class="intro">
-      Looking to hire leaders or project managers but not sure where to start? How do you scale your business with the right team members while keeping your focus on goals and overall company trajectory? We understand the skills you're looking for — and we know how to identify candidates who truly fit the mold. From defining the role to conducting technical interviews, we filter the noise and deliver a refined candidate pool so you can focus on what matters most: selecting the person who aligns with your company culture and team energy.
+      Looking to hire leaders or project managers but not sure where to start? How do you scale your business with the right team members while keeping your focus on goals and overall company trajectory? We understand the skills you're looking for, and we know how to identify candidates who truly fit the mold. From defining the role to conducting technical interviews, we filter the noise and deliver a refined candidate pool so you can focus on what matters most: selecting the person who aligns with your company culture and team energy.
     </p>
 
     <!-- Role Definition & Strategy -->
-    <h2><span class="icon">🎯</span>Role Definition & Hiring Strategy</h2>
+    <h2><span class="icon">🎯</span>Role Definition &amp; Hiring Strategy</h2>
     <p style="color: #4a5568; margin-bottom: 10px;">Before you can hire the right person, you need to know exactly what you're looking for. We help you:</p>
     <ul class="service-list">
       <li><strong>Role Architecture</strong> — Define clear job descriptions, required competencies, preferred qualifications, and performance expectations tailored to your industry and organizational structure.</li>
       <li><strong>Hiring Roadmaps</strong> — Develop a structured hiring plan aligned with your growth trajectory, identifying which roles to fill, in what order, and with what level of seniority.</li>
       <li><strong>Compensation Benchmarking</strong> — Provide market-driven salary and benefits guidance to ensure your offers are competitive without overextending your budget.</li>
-      <li><strong>Candidate Persona Development</strong> — Go beyond the job description. We help you define the intangible qualities — work ethic, adaptability, leadership style, communication approach — that define a great fit for your team.</li>
+      <li><strong>Candidate Persona Development</strong> — Go beyond the job description. We help you define the intangible qualities, including work ethic, adaptability, leadership style, and communication approach, that define a great fit for your team.</li>
     </ul>
 
     <!-- Interviewing Support -->
-    <h2><span class="icon">🎤</span>Interviewing Support & Technical Screening</h2>
+    <h2><span class="icon">🎤</span>Interviewing Support &amp; Technical Screening</h2>
     <p style="color: #4a5568; margin-bottom: 10px;">Through understanding your direct business needs and company structure, we can support interviewing subject matter experts in your field, conducting interviews that go beyond surface-level questions to reveal true capability:</p>
     <ul class="service-list">
-      <li><strong>Technical & Behavioral Interviewing</strong> — We conduct in-depth interviews that assess both hard skills and behavioral fit, using proven frameworks like STAR (Situation, Task, Action, Result) to evaluate real-world competency.</li>
-      <li><strong>Subject Matter Expert Screening</strong> — As experienced practitioners in project management, leadership development, and operations, we ask the questions that reveal whether a candidate truly knows their craft — or just knows the buzzwords.</li>
-      <li><strong>Custom Interview Question Banks</strong> — Build tailored question sets for each role that test specific competencies, problem-solving ability, and cultural alignment — not generic questions anyone can prep for.</li>
-      <li><strong>Practical Assessments & Case Studies</strong> — Design real-world exercises and scenario-based assessments that show you how a candidate thinks, communicates, and executes under pressure.</li>
-      <li><strong>Interview Panel Coaching</strong> — Train your internal interviewers on effective questioning techniques, bias mitigation, note-taking standards, and calibration — so your whole team interviews with consistency and confidence.</li>
-      <li><strong>Scorecards & Evaluation Frameworks</strong> — Implement structured scorecards that rate candidates against defined criteria, removing gut-feel hiring and replacing it with data-driven decisions.</li>
+      <li><strong>Technical &amp; Behavioral Interviewing</strong> — We conduct in-depth interviews that assess both hard skills and behavioral fit, using proven frameworks like STAR (Situation, Task, Action, Result) to evaluate real-world competency.</li>
+      <li><strong>Subject Matter Expert Screening</strong> — As experienced practitioners in project management, leadership development, and operations, we ask the questions that reveal whether a candidate truly knows their craft, or just knows the buzzwords.</li>
+      <li><strong>Custom Interview Question Banks</strong> — Build tailored question sets for each role that test specific competencies, problem-solving ability, and cultural alignment, not generic questions anyone can prep for.</li>
+      <li><strong>Practical Assessments &amp; Case Studies</strong> — Design real-world exercises and scenario-based assessments that show you how a candidate thinks, communicates, and executes under pressure.</li>
+      <li><strong>Interview Panel Coaching</strong> — Train your internal interviewers on effective questioning techniques, bias mitigation, note-taking standards, and calibration, so your whole team interviews with consistency and confidence.</li>
+      <li><strong>Scorecards &amp; Evaluation Frameworks</strong> — Implement structured scorecards that rate candidates against defined criteria, removing gut-feel hiring and replacing it with data-driven decisions.</li>
     </ul>
 
     <!-- Candidate Pipeline Management -->
     <h2><span class="icon">📊</span>Candidate Pipeline Management</h2>
     <p style="color: #4a5568; margin-bottom: 10px;">We do the heavy lifting so you don't have to. Our pipeline management process includes:</p>
     <ul class="service-list">
-      <li><strong>Initial Screening & Filtering</strong> — Review applications, conduct phone screens, and filter out candidates who don't meet the baseline requirements — saving your team hours of review time.</li>
-      <li><strong>Deep-Dive Candidate Interviews</strong> — Conduct multiple rounds of interviews — technical, behavioral, and cultural — to thoroughly vet each candidate before they ever reach your desk.</li>
+      <li><strong>Initial Screening &amp; Filtering</strong> — Review applications, conduct phone screens, and filter out candidates who don't meet the baseline requirements, saving your team hours of review time.</li>
+      <li><strong>Deep-Dive Candidate Interviews</strong> — Conduct multiple rounds of interviews, technical, behavioral, and cultural, to thoroughly vet each candidate before they ever reach your desk.</li>
       <li><strong>Reference Verification</strong> — Perform structured reference checks that go beyond "would you hire them again" to uncover work style, strengths, growth areas, and team dynamics.</li>
-      <li><strong>Refined Candidate Pools</strong> — Deliver a short list of 2–5 highly qualified, pre-vetted candidates — each with a detailed assessment summary, strengths/weaknesses analysis, and our recommendation on fit.</li>
+      <li><strong>Refined Candidate Pools</strong> — Deliver a short list of 2 to 5 highly qualified, pre-vetted candidates, each with a detailed assessment summary, strengths and weaknesses analysis, and our recommendation on fit.</li>
       <li><strong>Final Selection Support</strong> — Sit with your team during final interviews, provide real-time observations, and facilitate decision-making discussions to help you confidently select the right person.</li>
     </ul>
 
     <!-- Onboarding & Retention -->
-    <h2><span class="icon">🚀</span>Onboarding & Retention Strategy</h2>
+    <h2><span class="icon">🚀</span>Onboarding &amp; Retention Strategy</h2>
     <p style="color: #4a5568; margin-bottom: 10px;">Hiring is only half the battle. We help you set new hires up for long-term success:</p>
     <ul class="service-list">
       <li><strong>Structured Onboarding Plans</strong> — Develop 30/60/90-day onboarding roadmaps that accelerate ramp-up time and establish clear early expectations.</li>
@@ -157,11 +183,11 @@
     <div class="cards">
       <div class="card">
         <h3>You Stay Focused on Your Business</h3>
-        <p>We handle the sourcing, screening, and interviewing — so you spend your time only on final selections, not sifting through dozens of unqualified resumes.</p>
+        <p>We handle the sourcing, screening, and interviewing, so you spend your time only on final selections, not sifting through dozens of unqualified resumes.</p>
       </div>
       <div class="card">
         <h3>Subject Matter Expertise</h3>
-        <p>We speak the language of your industry. Our interviews test real competency, not rehearsed answers — because we've done the work ourselves.</p>
+        <p>We speak the language of your industry. Our interviews test real competency, not rehearsed answers, because we've done the work ourselves.</p>
       </div>
       <div class="card">
         <h3>Culture-First Matching</h3>
@@ -169,7 +195,7 @@
       </div>
       <div class="card">
         <h3>Refined, Not Overwhelming</h3>
-        <p>You won't get 20 resumes to review. You'll get 2–5 exceptional candidates — each one ready to contribute, vetted, and backed by our detailed assessment.</p>
+        <p>You won't get 20 resumes to review. You'll get 2 to 5 exceptional candidates, each one ready to contribute, vetted, and backed by our detailed assessment.</p>
       </div>
     </div>
 
