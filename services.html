@@ -31,49 +31,27 @@
       .dropdown.active .dropdown-content { display: block; }
     }
 
-    /* Modern Animated Hero */
+    /* Parallax Photo Hero (shorter than homepage) */
     .hero {
       position: relative;
-      overflow: hidden;
-      background: linear-gradient(135deg, #004e92 0%, #000428 100%);
-      color: #ffffff;
-      padding: 90px 20px 80px;
-      text-align: center;
+      width: 100%;
+      height: 60vh;
       min-height: 420px;
+      background-image: linear-gradient(rgba(0,4,40,0.55), rgba(0,4,40,0.8)), url('Duck-ai-image-2026-06-16-19-22.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      text-align: center;
+      padding: 20px;
     }
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(circle at 20% 30%, rgba(79,195,247,0.18), transparent 45%),
-                        radial-gradient(circle at 80% 70%, rgba(79,195,247,0.14), transparent 45%);
-      pointer-events: none;
-    }
-    .orb {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(40px);
-      opacity: 0.5;
-      pointer-events: none;
-    }
-    .orb-1 { width: 260px; height: 260px; background: #4fc3f7; top: -60px; left: -40px; animation: drift1 14s ease-in-out infinite; }
-    .orb-2 { width: 200px; height: 200px; background: #1e88e5; bottom: -50px; right: -30px; animation: drift2 18s ease-in-out infinite; }
-    .orb-3 { width: 140px; height: 140px; background: #82d4ff; top: 40%; right: 20%; animation: drift1 20s ease-in-out infinite; }
-    @keyframes drift1 {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(40px, 30px) scale(1.15); }
-    }
-    @keyframes drift2 {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(-30px, -40px) scale(1.1); }
-    }
-    .hero-content { position: relative; z-index: 2; animation: fadeUp 1s ease both; }
-    .hero h1 { font-size: 2.9rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 16px; text-shadow: 0 2px 18px rgba(0,0,0,0.35); }
-    .hero .subtitle { font-family: 'Merriweather', serif; font-size: 1.2rem; font-weight: 400; color: #d6ecff; max-width: 700px; margin: 0 auto; font-style: italic; }
+    .hero-content { animation: fadeUp 1s ease both; }
+    .hero h1 { color: #ffffff; font-size: 2.9rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 16px; text-shadow: 0 2px 18px rgba(0,0,0,0.45); }
+    .hero .subtitle { font-family: 'Merriweather', serif; font-size: 1.2rem; font-weight: 400; color: #d6ecff; max-width: 700px; margin: 0 auto; font-style: italic; text-shadow: 0 2px 12px rgba(0,0,0,0.4); }
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(28px); }
       to { opacity: 1; transform: translateY(0); }
@@ -99,6 +77,9 @@
     .service-card .learn-more { font-size: 0.88rem; font-weight: 600; color: #4fc3f7; letter-spacing: 0.3px; }
     .service-card:hover .learn-more { color: #004e92; }
 
+    @media (max-width: 768px) {
+      .hero { height: 48vh; min-height: 340px; background-attachment: scroll; }
+    }
     @media (max-width: 600px) {
       .service-cards { grid-template-columns: 1fr; }
       .hero h1 { font-size: 2rem; }
@@ -133,11 +114,8 @@
     </ul>
   </nav>
 
-  <!-- Modern Animated Hero -->
+  <!-- Parallax Photo Hero -->
   <section class="hero">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
     <div class="hero-content">
       <h1>Our Services</h1>
       <p class="subtitle">Comprehensive support across every dimension of your business</p>
