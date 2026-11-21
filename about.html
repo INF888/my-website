@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; color: #2c3e50; line-height: 1.7; }
     nav { background: linear-gradient(135deg, #004e92 0%, #000428 100%); position: sticky; top: 0; z-index: 1000; width: 100%; box-shadow: 0 2px 12px rgba(0,0,0,0.3); }
     nav ul { list-style: none; display: flex; justify-content: center; max-width: 1000px; margin: 0 auto; padding: 0 20px; }
@@ -30,10 +31,31 @@
       .dropdown.active .dropdown-content { display: block; }
     }
 
-    /* Hero Section */
-    .hero { background: linear-gradient(135deg, #004e92 0%, #000428 100%); color: #ffffff; padding: 70px 20px 60px; text-align: center; }
-    .hero h1 { font-size: 2.6rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 14px; }
-    .hero .subtitle { font-family: 'Merriweather', serif; font-size: 1.15rem; font-weight: 400; color: #b3d9ff; max-width: 700px; margin: 0 auto; font-style: italic; }
+    /* Parallax Photo Hero */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      min-height: 420px;
+      background-image: linear-gradient(rgba(0,4,40,0.55), rgba(0,4,40,0.8)), url('Duck-ai-image-2026-06-16-19-22.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+    .hero-content { animation: fadeUp 1s ease both; }
+    .hero h1 { color: #ffffff; font-size: 2.9rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 16px; text-shadow: 0 2px 18px rgba(0,0,0,0.45); }
+    .hero .subtitle { font-family: 'Merriweather', serif; font-size: 1.2rem; font-weight: 400; color: #d6ecff; max-width: 700px; margin: 0 auto; font-style: italic; text-shadow: 0 2px 12px rgba(0,0,0,0.4); }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
     /* Main Container */
     .container { max-width: 920px; margin: 0 auto; padding: 50px 20px; }
@@ -69,10 +91,13 @@
     .card h3 { margin-top: 0; color: #004e92; font-size: 1.05rem; }
     .card p { font-size: 0.92rem; color: #4a5568; margin-top: 6px; }
 
+    @media (max-width: 768px) {
+      .hero { height: 48vh; min-height: 340px; background-attachment: scroll; }
+    }
     @media (max-width: 600px) {
       .stats-row { grid-template-columns: repeat(2, 1fr); }
       .cards { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 1.8rem; }
+      .hero h1 { font-size: 2rem; }
       .hero .subtitle { font-size: 1rem; }
     }
 
@@ -104,10 +129,12 @@
     </ul>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Parallax Photo Hero -->
   <section class="hero">
-    <h1>About Us</h1>
-    <p class="subtitle">Your partner for growth, leadership, and organizational excellence</p>
+    <div class="hero-content">
+      <h1>About Us</h1>
+      <p class="subtitle">Your partner for growth, leadership, and organizational excellence</p>
+    </div>
   </section>
 
   <div class="container">
@@ -157,29 +184,14 @@
     <h2><span class="icon">💼</span>Experience at a Glance</h2>
     <ul class="exp-list">
       <li><strong>Director of Operations (Telecommunications)</strong> - Oversaw operations, field engineering, and project delivery across complex telecom infrastructure.</li>
-      <li><strong>Technical Program Management</strong> - Ran cross-functional programs for hyperscale data center deployments serving the biggest names in tech.</li>
-      <li><strong>Operations Manager, Multiple Data Centers</strong> - Managed about 400MW of IT load across multiple facilities, keeping safety, quality, and on-time delivery the priority.</li>
-      <li><strong>Project Management, $50K to $1B Budgets</strong> - Delivered projects of all sizes with 97%+ budget accuracy, on time or early.</li>
-      <li><strong>Team Building and Leadership</strong> - Built and grew high-performing teams across multiple organizations, always looking for the gaps and figuring out the smartest way to fill them.</li>
-      <li><strong>AI Sector Deployments</strong> - Led technology deployments powering AI infrastructure at a scale most people never see.</li>
+      <li><strong>Technical Program Management</strong> - Ran cross-functional programs and large-scale technology deployments end to end.</li>
+      <li><strong>Field Engineering</strong> - Hands-on delivery experience that grounds every recommendation in real-world execution.</li>
+      <li><strong>Operations Manager, Hyperscale Data Centers</strong> - Managed roughly 400 MW of IT load across multiple data centers, building and leading high-performing teams.</li>
+      <li><strong>PMP Certified</strong> - Formal project management credentials backed by 17 years of practical delivery.</li>
     </ul>
 
-    <!-- Why Infinite Solutions -->
-    <h2><span class="icon">💡</span>Why I Started Infinite Solutions</h2>
-    <div class="founder-bio">
-      <p>
-        Here's what I kept seeing: the work that got your business started is what you're best at. But scaling to the next level is a whole different thing. It means figuring out what pieces you're missing, how to fill those gaps, and making business decisions that actually support growth without putting everything at risk. That's not always your skill set, and it shouldn't have to be.
-      </p>
-      <p>
-        After almost two decades of building teams, managing massive budgets, and scaling operations for some of the most demanding companies in the world, I saw a real gap. Small and growing businesses need the same kind of strategic help that big companies have access to, but it needs to be practical, personal, and actually fit how they operate.
-      </p>
-      <p>
-        <strong>I built this business to help you build yours.</strong> I'll spend real time with you and your team to understand where you are, where you want to go, and what it's going to take to get there. Then I'll stay engaged with you, with goals and strategies built specifically for your company and your people.
-      </p>
-    </div>
-
     <!-- What We Value -->
-    <h2>What We Value</h2>
+    <h2><span class="icon">⭐</span>What We Value</h2>
     <div class="cards">
       <div class="card">
         <h3>Partnership Over Consulting</h3>
@@ -191,11 +203,11 @@
       </div>
       <div class="card">
         <h3>Clarity Over Complexity</h3>
-        <p>We cut through the noise and give you clear, actionable direction. No jargon, no fluff.</p>
+        <p>We cut through the noise, whether it's project plans, financial reports, or hiring decisions, and give you clear, actionable direction.</p>
       </div>
       <div class="card">
         <h3>Growth Over Status Quo</h3>
-        <p>We exist to help you move forward. Every engagement is designed to leave your organization stronger and better positioned for what's next.</p>
+        <p>We exist to help you move forward. Every engagement is designed to leave your organization stronger, more capable, and better positioned for what's next.</p>
       </div>
     </div>
 
